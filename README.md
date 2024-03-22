@@ -26,7 +26,7 @@ dotnet tool install --global dotnet-ef
 
 ## Antes de comenzar... entiende la base de datos que vamos a utilizar ⚙️
 Los ejemplos se realizan sobre una base de datos de alquileres de coches.
-![My Image](../docs/02.Bdd.JPG)
+![My Image](./docs/02.Bdd.JPG)
 
 ## Agradecimientos 🎁
 
@@ -34,7 +34,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 * A cualquiera que me invite a una cerveza 🍺.
 
 # SECCIÓN 01. Clean architecture en .NET <a name="Seccion_01_Clean"></a>
-![My Image](../docs/01.Domain.JPG)
+![My Image](./docs/01.Domain.JPG)
 
 # SECCIÓN 02. Proyecto CleanArchitecture.Domain <a name="Seccion_02_Domain"></a>
 
