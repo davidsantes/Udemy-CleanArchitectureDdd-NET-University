@@ -39,13 +39,20 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 # SECCIÓN 02. Proyecto CleanArchitecture.Domain <a name="Seccion_02_Domain"></a>
 
 **CleaArchitecture.Domain.Abstractions:**
-* ```public abstract class Entity```: para poner un ```Guid``` a las clases de tipo entidad. La propiedad tiene como setter ``init``,  Init indica que una vez que ha sido inicializada la propiedad, no se puede cambiar su valor.
+* ```public abstract class Entity```: para identificar entidades, y poner un ```Guid``` a las clases de tipo entidad. La propiedad tiene como setter ``init``,  Init indica que una vez que ha sido inicializada la propiedad, no se puede cambiar su valor.
+* ```public interface IDomainEvents : INotification```: para configurar eventos de dominio. La entidad base ```Entity```, manejará estos eventos.
 
 **Principales características de una entidad de dominio:**
 * Clase ```sealed```: para que esté sellada.
 * Debe tener un identificador, debe heredar de la clase abstracta ```Entity```.
 * Propiedades con setter ```private set```: para cambiar los valores se deberá hacer a través de métodos.
+* Constructor privado. Existirá un factory method llamado ```Create``` para la cración de la clase.
 
 **Creación de Value objects:**
 * Ejemplos con records simples: Direccion, Modelo, Vin. Aportan legibilidad al negocio. Representados como records, por lo que no cambian de valor.
 * Ejemplos con records complejos: TipoMoneda, Moneda.
+
+**Creación de eventos de dominio y notificaciones:**
+* Para cambios en el estado de una entidad.
+* Creados a través del paquete Nuget ```MediatR.Contracts```.
+* Ejemplo:  ```UserCreatedDomainEvent```.
