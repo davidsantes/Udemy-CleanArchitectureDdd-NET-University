@@ -55,7 +55,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 **Creación de eventos de dominio y notificaciones:**
 * Para cambios en el estado de una entidad.
 * Creados a través del paquete Nuget ```MediatR.Contracts```.
-* Ejemplo:  ```UserCreatedDomainEvent```.
+* Ejemplos:  ```Alquileres/AlquilerCanceladoDomainEvent```, ```Users/UserCreatedDomainEvent```.
 
 **Creación de **servicios de dominio**:**
 * Un ejemplo es la clase ```PrecioService```, para realizar cálculos de precios.
@@ -63,3 +63,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 **Creación de los contratos de acceso a base de datos (repositorios) y persistencia (unit of work):**
 * Repositorios: ejemplo ```IUserRepository```.
 * Unit of work: ejemplo ```IUnitOfWork```.
+
+**Creación de objetos de Results:**
+* Clase ```Abstractions/Result```: clase para poder devolver resultados estructurados.
+* Clase ```Abstractions/Error```: clase para poder devolver errores estructurados. Posteriormente se crearán errores propios de cada dominio (por ejemplo, de tipo ```AlquilerErrors```).
