@@ -36,7 +36,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 # SECCIÓN 01. Clean architecture en .NET <a name="Seccion_01_Clean"></a>
 ![My Image](./docs/01.Domain.JPG)
 
-# SECCIÓN 02. Proyecto CleanArchitecture.Domain <a name="Seccion_02_Domain"></a>
+# SECCIÓN 02. Proyecto CleanArchitecture.Domain <a name="Seccion_02_Capa_Domain"></a>
 
 **CleaArchitecture.Domain.Abstractions:**
 * ```public abstract class Entity```: para identificar entidades, y poner un ```Guid``` a las clases de tipo entidad. La propiedad tiene como setter ``init``,  Init indica que una vez que ha sido inicializada la propiedad, no se puede cambiar su valor.
@@ -50,7 +50,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 
 **Creación de Value objects:**
 * Ejemplos con records simples: Direccion, Modelo, Vin. Aportan legibilidad al negocio. Representados como records, por lo que no cambian de valor.
-* Ejemplos con records complejos: TipoMoneda, Moneda.
+* Ejemplos con records complejos: ```TipoMoneda```, ```Moneda```.
 
 **Creación de eventos de dominio y notificaciones:**
 * Para cambios en el estado de una entidad.
@@ -67,3 +67,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 **Creación de objetos de Results:**
 * Clase ```Abstractions/Result```: clase para poder devolver resultados estructurados.
 * Clase ```Abstractions/Error```: clase para poder devolver errores estructurados. Posteriormente se crearán errores propios de cada dominio (por ejemplo, de tipo ```AlquilerErrors```).
+
+**Objetos shared en Domain Model:**
+* Dentro del modelo hay componentes que se va a reusar dentro de las entidades.
+* Por ejemplo: ```Shared/TipoMoneda```, ```Shared/Moneda```.

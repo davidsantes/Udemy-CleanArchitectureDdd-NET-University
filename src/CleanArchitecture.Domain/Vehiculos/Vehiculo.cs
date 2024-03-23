@@ -1,4 +1,5 @@
 using CleaArchitecture.Domain.Abstractions;
+using CleanArchitecture.Domain.Shared;
 
 namespace CleaArchitecture.Domain.Vehiculos;
 

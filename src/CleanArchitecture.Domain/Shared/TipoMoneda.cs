@@ -1,4 +1,4 @@
-namespace CleaArchitecture.Domain.Vehiculos;
+namespace CleanArchitecture.Domain.Shared;
 
 /// <summary>
 /// Value object de tipo de moneda que se pueda utilizar en el proyecto.

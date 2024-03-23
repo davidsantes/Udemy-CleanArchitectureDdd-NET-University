@@ -1,4 +1,4 @@
-namespace CleaArchitecture.Domain.Vehiculos;
+namespace CleanArchitecture.Domain.Shared;
 
 /// <summary>
 /// Value object que indica un precio en una moneda concreta.
@@ -12,9 +12,9 @@ public record Moneda(decimal Monto, TipoMoneda TipoMoneda)
     /// </summary>
     /// <returns>Montante de la suma de las monedas.</returns>
     /// <exception cref="InvalidOperationException"></exception>
-    public static Moneda operator + (Moneda primero, Moneda segundo)
+    public static Moneda operator +(Moneda primero, Moneda segundo)
     {
-        if(primero.TipoMoneda != segundo.TipoMoneda)
+        if (primero.TipoMoneda != segundo.TipoMoneda)
         {
             throw new InvalidOperationException("El tipo de moneda debe ser el mismo");
         }

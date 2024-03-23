@@ -1,4 +1,5 @@
 using CleaArchitecture.Domain.Vehiculos;
+using CleanArchitecture.Domain.Shared;
 
 namespace CleaArchitecture.Domain.Alquileres;
 
