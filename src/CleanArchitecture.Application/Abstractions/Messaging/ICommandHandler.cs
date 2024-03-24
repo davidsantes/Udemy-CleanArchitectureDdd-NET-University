@@ -1,7 +1,7 @@
 using CleanArchitecture.Domain.Abstractions;
 using MediatR;
 
-namespace CleaArchitecture.Application.Abstractions.Messaging;
+namespace CleanArchitecture.Application.Abstractions.Messaging;
 
 /// <summary>
 /// Interfaz para los controladores de comandos que manejan comandos de tipo genérico y producen resultados de tipo Result.

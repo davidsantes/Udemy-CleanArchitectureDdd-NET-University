@@ -1,7 +1,7 @@
 using CleanArchitecture.Domain.Abstractions;
 using MediatR;
 
-namespace CleaArchitecture.Application.Abstractions.Messaging;
+namespace CleanArchitecture.Application.Abstractions.Messaging;
 
 /// <summary>
 /// Interfaz para las consultas que devuelven un resultado de tipo genérico.
