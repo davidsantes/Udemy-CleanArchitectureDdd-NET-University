@@ -1,4 +1,4 @@
-using CleaArchitecture.Domain.Vehiculos;
+using CleanArchitecture.Domain.Vehiculos;
 
 namespace CleanArchitecture.Domain.Vehiculos;
 

@@ -1,13 +1,11 @@
-using CleaArchitecture.Domain.Alquileres;
-using CleaArchitecture.Domain.Users;
 using CleanArchitecture.Application.Abstractions.Clock;
 using CleanArchitecture.Application.Abstractions.Messaging;
-using CleanArchitecture.Application.Alquileres.ReservarAlquiler;
 using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Alquileres;
+using CleanArchitecture.Domain.Users;
 using CleanArchitecture.Domain.Vehiculos;
 
-namespace CleaArchitecture.Application.Alquileres.ReservarAlquiler;
+namespace CleanArchitecture.Application.Alquileres.ReservarAlquiler;
 
 internal sealed class ReservarAlquilerCommandHandler :
     ICommandHandler<ReservarAlquilerCommand, Guid>

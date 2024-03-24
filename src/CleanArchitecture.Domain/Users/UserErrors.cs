@@ -1,6 +1,6 @@
 using CleanArchitecture.Domain.Abstractions;
 
-namespace CleaArchitecture.Domain.Users;
+namespace CleanArchitecture.Domain.Users;
 
 public static class UserErrors
 {

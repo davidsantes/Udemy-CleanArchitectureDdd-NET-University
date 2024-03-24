@@ -48,7 +48,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 
 # SECCIÓN 02. Proyecto CleanArchitecture.Domain <a name="Seccion_02_Capa_Domain"></a>
 
-**CleaArchitecture.Domain.Abstractions:**
+**CleanArchitecture.Domain.Abstractions:**
 * `public abstract class Entity`: para identificar entidades, y poner un `Guid` a las clases de tipo entidad. La propiedad tiene como setter `init`,  Init indica que una vez que ha sido inicializada la propiedad, no se puede cambiar su valor.
 * `public interface IDomainEvents : INotification`: para configurar eventos de dominio. La entidad base `Entity`, manejará estos eventos.
 
@@ -89,8 +89,8 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 **Paquetes Nuget:**
 * Uso de `MediatR`: MediatR es una implementación del patrón mediador que ocurre completamente en el mismo proceso de la aplicación (in-process), y es una herramienta fundamental para crear sistemas basados en CQRS. Toda la comunicación entre el usuario y la capa de persistencia se gestiona a través de MediatR.
 
-**CleaArchitecture.Application.Abstractions:**
-* Carpeta `Messaging`: n esta carpeta se encuentran las interfaces relacionadas con el manejo de mensajes dentro de la aplicación.
+**Carpeta `Abstractions`, que dentro contiene, entre otros:**
+* Carpeta `Messaging`: en esta carpeta se encuentran las interfaces relacionadas con el manejo de mensajes dentro de la aplicación.
 	* Interfaces para **Queries**: 
 		* `IQuery`: Define una interfaz para las consultas que devuelven un resultado.
 			* Por ejemplo, para devolver todos los usuarios, se crearía la clase `ConsultasUsuarioQuery`.
@@ -101,6 +101,12 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 			* Por ejemplo, para crear un usuario, se crearía la clase `UsuarioCommand`.
 		* `ICommandHandler`: Define una interfaz para los controladores de comandos.
 			* Por ejemplo, para manejar comandos relacionados con usuarios, se crearía una clase que implemente esta interfaz, como `UsuarioCommandHandler`.
-* Inyección de dependencias: a través de la clase `DependencyInjection`: 
+* Clase `DependencyInjection`, encargada de la inyección de dependencias, por ejemplo, de: 
 	* Registrará los servicios, como por ejemplo `PrecioService`.
 	* Registrará los datos necesarios de `MediatR`, como los Command, Queries y sus respectivos Handlers a través del patrón Mediator.
+* Carpeta `Exceptions`, que dentro contiene, entre otros:**
+	* Lorem ipsum.
+* Carpeta `Alquileres`, que dentro contiene la lógica de alquileres, entre otros:**
+	* Lógica para gestionas alquileres, con sus correspondientes Query, Command, etc.
+* Carpeta `Vehiculos`, que dentro contiene la lógica de vehículos, entre otros:**
+	* Lorem ipsum.

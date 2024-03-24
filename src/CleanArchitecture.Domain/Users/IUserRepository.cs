@@ -1,6 +1,6 @@
 using CleanArchitecture.Domain.Users;
 
-namespace CleaArchitecture.Domain.Users;
+namespace CleanArchitecture.Domain.Users;
 
 public interface IUserRepository
 {

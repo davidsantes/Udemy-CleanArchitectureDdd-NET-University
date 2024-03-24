@@ -1,4 +1,4 @@
-namespace CleaArchitecture.Domain.Vehiculos;
+namespace CleanArchitecture.Domain.Vehiculos;
 
 /// <summary>
 /// Value object de dirección. Una vez creado, no cambia de valor.

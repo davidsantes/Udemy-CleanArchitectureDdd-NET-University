@@ -1,4 +1,4 @@
-﻿using CleaArchitecture.Domain.Abstractions;
+﻿using CleanArchitecture.Domain.Abstractions;
 using CleanArchitecture.Domain.Users.Events;
 
 namespace CleanArchitecture.Domain.Users;

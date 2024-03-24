@@ -1,6 +1,6 @@
 using CleanArchitecture.Domain.Abstractions;
 
-namespace CleaArchitecture.Domain.Reviews;
+namespace CleanArchitecture.Domain.Reviews;
 
 /// <summary>
 /// Rating a puntuar entre 1 y 5 estrellas.

@@ -1,4 +1,4 @@
-namespace CleaArchitecture.Domain.Vehiculos;
+namespace CleanArchitecture.Domain.Vehiculos;
 
 public enum Accesorio
 {

@@ -1,12 +1,9 @@
-using CleaArchitecture.Domain.Abstractions;
-using CleaArchitecture.Domain.Alquileres.Events;
-using CleaArchitecture.Domain.Vehiculos;
 using CleanArchitecture.Domain.Abstractions;
-using CleanArchitecture.Domain.Alquileres;
 using CleanArchitecture.Domain.Alquileres.Events;
 using CleanArchitecture.Domain.Shared;
+using CleanArchitecture.Domain.Vehiculos;
 
-namespace CleaArchitecture.Domain.Alquileres;
+namespace CleanArchitecture.Domain.Alquileres;
 
 public sealed class Alquiler : Entity
 {

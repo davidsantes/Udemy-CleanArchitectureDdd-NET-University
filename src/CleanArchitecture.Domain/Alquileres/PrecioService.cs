@@ -1,7 +1,7 @@
-using CleaArchitecture.Domain.Vehiculos;
 using CleanArchitecture.Domain.Shared;
+using CleanArchitecture.Domain.Vehiculos;
 
-namespace CleaArchitecture.Domain.Alquileres;
+namespace CleanArchitecture.Domain.Alquileres;
 
 public class PrecioService
 {

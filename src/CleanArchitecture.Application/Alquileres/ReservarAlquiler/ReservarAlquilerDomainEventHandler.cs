@@ -1,10 +1,10 @@
-using CleaArchitecture.Domain.Alquileres.Events;
-using CleaArchitecture.Domain.Users;
+using CleanArchitecture.Domain.Alquileres.Events;
+using CleanArchitecture.Domain.Users;
 using CleanArchitecture.Application.Abstractions.Email;
 using CleanArchitecture.Domain.Alquileres;
 using MediatR;
 
-namespace CleaArchitecture.Application.Alquileres.ReservarAlquiler;
+namespace CleanArchitecture.Application.Alquileres.ReservarAlquiler;
 
 internal sealed class ReservarAlquilerDomainEventHandler
 : INotificationHandler<AlquilerReservadoDomainEvent>
