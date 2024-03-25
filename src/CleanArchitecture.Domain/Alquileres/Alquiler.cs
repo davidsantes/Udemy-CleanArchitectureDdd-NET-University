@@ -7,6 +7,12 @@ namespace CleanArchitecture.Domain.Alquileres;
 
 public sealed class Alquiler : Entity
 {
+    /// <summary>
+    /// Constructor necesario para que EF funcione.
+    /// </summary>
+    private Alquiler()
+    { }
+
     private Alquiler(
         Guid id,
         Guid vehiculoId,

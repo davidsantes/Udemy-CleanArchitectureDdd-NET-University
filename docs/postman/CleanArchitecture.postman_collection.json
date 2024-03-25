@@ -1,0 +1,252 @@
+{
+	"info": {
+		"_postman_id": "0ce9c6fa-3d5b-467c-a70e-80ec60e1c720",
+		"name": "REST Clean architecture",
+		"description": "# 🚀 Ejemplos\n\nPlantilla para realizar pruebas básicas en el proyecto de CleanArchitecture con Domain Driven Design.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "13496196"
+	},
+	"item": [
+		{
+			"name": "Vehiculos",
+			"item": [
+				{
+					"name": "SearchVehiculos",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/vehiculos?startDate=01-01-2024&endDate=01-10-2024",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"vehiculos"
+							],
+							"query": [
+								{
+									"key": "startDate",
+									"value": "01-01-2024"
+								},
+								{
+									"key": "endDate",
+									"value": "01-10-2024"
+								}
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Alquileres",
+			"item": [
+				{
+					"name": "ReservaAlquilerUserKo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"vehiculoId\": \"b6ad772a-d5c3-433f-9523-e01ba932e039\",\n    \"userId\": \"867f6e22-e39f-4567-aaf3-8fda3d061d7e\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-01-10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/alquileres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"alquileres"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "ReservaAlquilerFechasKo",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"vehiculoId\": \"b6ad772a-d5c3-433f-9523-e01ba932e039\",\n    \"userId\": \"867f6e22-e39f-4567-aaf3-8fda3d061d7e\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-01-10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/alquileres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"alquileres"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "ReservaAlquilerOk",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Successful POST request\", function () {",
+									"    pm.expect(pm.response.code).to.be.oneOf([200, 201]);",
+									"});",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\n\t\"vehiculoId\": \"a628c083-e67d-4391-b170-e65471160dec\",\n    \"userId\": \"de1e4bb7-4ead-4936-ab2d-23863d62b964\",\n    \"startDate\": \"2024-01-01\",\n    \"endDate\": \"2024-01-10\"\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "{{url}}/api/alquileres",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"alquileres"
+							]
+						},
+						"description": "This is a POST request, submitting data to an API via the request body. This request submits JSON data, and the data is reflected in the response.\n\nA successful POST request typically returns a `200 OK` or `201 Created` response code."
+					},
+					"response": []
+				},
+				{
+					"name": "GetAlquiler",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"pm.test(\"Status code is 200\", function () {",
+									"    pm.response.to.have.status(200);",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "{{url}}/api/alquileres/a0869d39-0e91-4763-b0e2-e1be974f4a51",
+							"host": [
+								"{{url}}"
+							],
+							"path": [
+								"api",
+								"alquileres",
+								"a0869d39-0e91-4763-b0e2-e1be974f4a51"
+							]
+						},
+						"description": "This is a GET request and it is used to \"get\" data from an endpoint. There is no request body for a GET request, but you can use query parameters to help specify the resource you want data on (e.g., in this request, we have `id=1`).\n\nA successful GET response will have a `200 OK` status, and should include some kind of response body - for example, HTML web content or JSON data."
+					},
+					"response": []
+				}
+			]
+		}
+	],
+	"event": [
+		{
+			"listen": "prerequest",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		},
+		{
+			"listen": "test",
+			"script": {
+				"type": "text/javascript",
+				"exec": [
+					""
+				]
+			}
+		}
+	],
+	"variable": [
+		{
+			"key": "id",
+			"value": "1"
+		},
+		{
+			"key": "base_url",
+			"value": "https://postman-rest-api-learner.glitch.me/"
+		}
+	]
+}

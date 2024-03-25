@@ -9,7 +9,8 @@ Ejercicios tomados del curso de .Net University en Udemy: **Clean Architecture y
 2. **[Capa de Domain](#Seccion_02_Capa_Domain)**
 3. **[Capa de Application](#Seccion_03_Capa_Application)**
 4. **[Capa de Infrastructure](#Seccion_04_Capa_Infrastructure)**
-
+5. **[Capa de presentación - Web API](#Seccion_05_Capa_Presentacion_WebApi)**
+ 
 ---
 
 # Toma de contacto  🚀 <a name="Toma_Contacto"></a>
@@ -22,15 +23,13 @@ https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-managem
 ## Pre-requisitos 📋
 Como herramientas de desarrollo necesitarás:
 * Visual Studio 2022 (con la versión para .NET 8)
-* SQL Server (con la versión Express es suficiente)
-* Tener instalado el [Command-line interface (CLI) de EF](https://learn.microsoft.com/en-us/ef/core/cli/dotnet). Ejecutar en un cmd:
-```
-dotnet tool install --global dotnet-ef
-```
+* Acceso para Postgre SQL, ya que la base de datos es de este tipo, con una de las siguientes versiones:
+	* (Versión utilizada en el ejemplo) Usar una base de datos en local descargando [PostgreSql](https://www.postgresql.org/).
+	* Usar una base de datos de PostgreSql online [Neon.Tech](https://neon.tech/).
 
 ## Antes de comenzar... entiende la base de datos que vamos a utilizar ⚙️
 Los ejemplos se realizan sobre una base de datos de alquileres de coches.
-![My Image](./docs/02.Bdd.JPG)
+![My Image](./docs/imgs/02.Bdd.JPG)
 
 ## Agradecimientos 🎁
 
@@ -40,14 +39,17 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 ---
 
 # SECCIÓN 01. Clean architecture en .NET <a name="Seccion_01_Clean"></a>
-![My Image](./docs/01.Domain.JPG)
+![My Image](./docs/imgs/00.DDD.JPG)
 
 ---
 
 # SECCIÓN 02. Proyecto CleanArchitecture.Domain <a name="Seccion_02_Capa_Domain"></a>
 
+**Se trata del corazón del negocio:**
+![My Image](./docs/imgs/01.Domain.JPG)
+
 **Estructura de carpetas:**
-![My Image](./docs/03.CleanArchitecture.Domain.Folders.JPG)
+![My Image](./docs/imgs/03.CleanArchitecture.Domain.Folders.JPG)
 
 **CleanArchitecture.Domain.Abstractions:**
 * `public abstract class Entity`: para identificar entidades, y poner un `Guid` a las clases de tipo entidad. La propiedad tiene como setter `init`,  Init indica que una vez que ha sido inicializada la propiedad, no se puede cambiar su valor.
@@ -88,7 +90,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 # SECCIÓN 03. Proyecto CleanArchitecture.Application <a name="Seccion_03_Capa_Application"></a>
 
 **Estructura de carpetas:**
-![My Image](./docs/04.CleanArchitecture.Application.Folders.JPG)
+![My Image](./docs/imgs/04.CleanArchitecture.Application.Folders.JPG)
 
 **Paquetes Nuget:**
 * Uso de `MediatR`: MediatR es una implementación del patrón mediador que ocurre completamente en el mismo proceso de la aplicación (in-process), y es una herramienta fundamental para crear sistemas basados en CQRS. Toda la comunicación entre el usuario y la capa de persistencia se gestiona a través de MediatR.
@@ -129,7 +131,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 # SECCIÓN 04. Proyecto CleanArchitecture.Infrastructure <a name="Seccion_04_Capa_Infrastructure"></a>
 
 **Estructura de carpetas:**
-![My Image](./docs/05.CleanArchitecture.Infrastructure.Folders.JPG)
+![My Image](./docs/imgs/05.CleanArchitecture.Infrastructure.Folders.JPG)
 
 **Paquetes Nuget:**
 * Uso de `EFCore.NamingConventions`, `Microsoft.EntityFrameworkCore`, `Microsoft.EntityFrameworkCore.Tools`, `Npgsql.EntityFrameworkCore.PostgreSQL`.
@@ -159,3 +161,58 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 **Clase `DependencyInjection.cs`, encargada de la inyección de dependencias, por ejemplo, de**:
 * Registrar los servicios, como por ejemplo `DateTimeProvider` y `EmailService`.
 * Registro de la base de datos.
+
+---
+# SECCIÓN 05. Proyecto CleanArchitecture.Api <a name="Seccion_05_Capa_Presentacion_WebApi"></a>
+
+**Estructura de carpetas:**
+![My Image](./docs/imgs/06.CleanArchitecture.Api.Folders.JPG)
+
+## Preparación de la migración para base de datos
+Seguir los siguientes pasos para crear una migración inicial:
+1. Ir al Package Manager Console y situarse en el proyecto `CleanArchitecture.Api`.
+2. Ejecutar:
+`
+dotnet tool install --global dotnet-ef
+`
+
+	El comando `dotnet tool install --global dotnet-ef` se utiliza para instalar la herramienta global `dotnet-ef`. Esta herramienta forma parte de la plataforma .NET Core y se utiliza para interactuar con Entity Framework Core (EF Core) desde la línea de comandos.
+	- `dotnet tool install`: Es el comando principal para instalar herramientas .NET Core.
+	- `--global`: Especifica que la herramienta se instalará de forma global en el sistema, lo que significa que estará disponible en cualquier directorio y para cualquier proyecto.
+	- `dotnet-ef`: Es el nombre de la herramienta que se está instalando, que se utiliza para ejecutar comandos relacionados con Entity Framework Core, como la creación de migraciones y la actualización de la base de datos.
+
+3. Ejecutar:
+`
+dotnet ef --verbose migrations add MigracionInicial -p src/CleanArchitecture.Infrastructure -s src/CleanArchitecture.Api
+`
+
+	Esta línea de comando ejecuta EF Core en un entorno detallado (--verbose) para agregar una migración con el nombre "MigracionInicial" a un proyecto. Aquí está la explicación detallada:
+	- `dotnet ef`: Inicia la herramienta CLI (Command Line Interface) de Entity Framework Core.
+	- `--verbose`: Esta bandera indica que la salida será detallada, proporcionando más información durante la ejecución.
+	- `migrations add MigracionInicial`: Agrega una nueva migración al proyecto actual con el nombre "MigracionInicial". Las migraciones en Entity Framework Core se utilizan para realizar cambios en la estructura de la base de datos y se aplican a través del proceso de migración.
+	- `-p src/CleanArchitecture.Infrastructure`: Especifica la ruta del proyecto donde se encuentran los archivos de la infraestructura de la aplicación. En este caso, los archivos del proyecto se encuentran en el directorio `src/CleanArchitecture.Infrastructure`.
+	- `-s src/CleanArchitecture.Api`: Especifica la ruta del proyecto de inicio donde se encuentran los archivos de la API de la aplicación. En este caso, los archivos del proyecto de inicio se encuentran en el directorio `src/CleanArchitecture.Api`.
+
+4. Resultado:
+Si todo ha ido correctamente, habrá creado una migración como:
+![My Image](./docs/imgs/07.CleanArchitecture.Migrations.Folder.JPG)
+
+6. Una vez creadas las migraciones, la clase `program.cs` del proyecto `CleanArchitecture.Api` llamará a:
+	- `ApplicationBuilderExtensions.ApplyMigration` para ejecutar las migraciones.
+	- `SeedDataExtensions.SeedData` para generar datos por defecto. Utiliza la librería `Bogus` para introducir datos fake.
+
+7. Ejecutar el proyecto `CleanArchitecture.Api`, y se creará tanto la base de datos como datos en las tablas.
+
+## Captura de excepciones
+La aplicación utiliza el Middleware `ExceptionHandlingMiddleware` para capturar las excepciones y mostrarlas de una forma entendible para el cliente.
+En caso de que se produzca un error, se devolverá un [ProblemDetails](https://datatracker.ietf.org/doc/html/rfc7807), el cual es un estándar de devolución de errores.
+
+## Los controladores
+Existen dos controladores dentro de la API:
+* `AlquileresController`: con 1 método get para retornar los alquileres y 1 método post para insertar.
+* `VehiculosController`: con 1 método get para retornar los vehículos.
+
+## Ejecución de la api
+La ejecución de la Api se puede realizar desde:
+* **Postman**: se incluye en la carpeta "docs" un environment y una colección con batería de pruebas de postman. Se debe tener en cuenta que los guids de las consultas quizás no coincidan ya que son autogenerados.
+* **Swagger**.

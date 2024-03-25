@@ -6,13 +6,6 @@ MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Domain", "src\CleanArchitecture.Domain\CleanArchitecture.Domain.csproj", "{2BB001E7-7688-4849-98FF-42948CF2E66D}"
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1BF38CDF-BF7D-4FD6-B247-3F9850B3EA31}"
-	ProjectSection(SolutionItems) = preProject
-		docs\01.Domain.JPG = docs\01.Domain.JPG
-		docs\02.Bdd.JPG = docs\02.Bdd.JPG
-		docs\03.CleanArchitecture.Domain.Folders.JPG = docs\03.CleanArchitecture.Domain.Folders.JPG
-		docs\04.CleanArchitecture.Application.Folders.JPG = docs\04.CleanArchitecture.Application.Folders.JPG
-		docs\05.CleanArchitecture.Infrastructure.Folders.JPG = docs\05.CleanArchitecture.Infrastructure.Folders.JPG
-	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E9AA2E5-7F15-4778-B0DB-8A9B1176903C}"
 	ProjectSection(SolutionItems) = preProject
@@ -22,6 +15,26 @@ EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Application", "src\CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{5727EBF7-3ECF-4727-89A8-7B3D3A548890}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Infrastructure", "src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{18EE6537-08C5-4F29-A642-35F6FA8AA103}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Api", "src\CleanArchitecture.Api\CleanArchitecture.Api.csproj", "{D93C1563-D870-4CC0-A3CE-2562B750443A}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "postman", "postman", "{227AFC21-60F6-49B5-B418-9EBEE4913AA8}"
+	ProjectSection(SolutionItems) = preProject
+		docs\postman\CleanArchitecture.postman_collection.json = docs\postman\CleanArchitecture.postman_collection.json
+		docs\postman\CleanArchitecture.postman_environment.json = docs\postman\CleanArchitecture.postman_environment.json
+	EndProjectSection
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{C4FA67FC-3B3F-41C6-9BB7-0B3472ED71C3}"
+	ProjectSection(SolutionItems) = preProject
+		docs\imgs\00.DDD.JPG = docs\imgs\00.DDD.JPG
+		docs\imgs\01.Domain.JPG = docs\imgs\01.Domain.JPG
+		docs\imgs\02.Bdd.JPG = docs\imgs\02.Bdd.JPG
+		docs\imgs\03.CleanArchitecture.Domain.Folders.JPG = docs\imgs\03.CleanArchitecture.Domain.Folders.JPG
+		docs\imgs\04.CleanArchitecture.Application.Folders.JPG = docs\imgs\04.CleanArchitecture.Application.Folders.JPG
+		docs\imgs\05.CleanArchitecture.Infrastructure.Folders.JPG = docs\imgs\05.CleanArchitecture.Infrastructure.Folders.JPG
+		docs\imgs\06.CleanArchitecture.Api.Folders.JPG = docs\imgs\06.CleanArchitecture.Api.Folders.JPG
+		docs\imgs\07.CleanArchitecture.Migrations.Folder.JPG = docs\imgs\07.CleanArchitecture.Migrations.Folder.JPG
+	EndProjectSection
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -41,9 +54,17 @@ Global
 		{18EE6537-08C5-4F29-A642-35F6FA8AA103}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{18EE6537-08C5-4F29-A642-35F6FA8AA103}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{18EE6537-08C5-4F29-A642-35F6FA8AA103}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D93C1563-D870-4CC0-A3CE-2562B750443A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D93C1563-D870-4CC0-A3CE-2562B750443A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D93C1563-D870-4CC0-A3CE-2562B750443A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D93C1563-D870-4CC0-A3CE-2562B750443A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{227AFC21-60F6-49B5-B418-9EBEE4913AA8} = {1BF38CDF-BF7D-4FD6-B247-3F9850B3EA31}
+		{C4FA67FC-3B3F-41C6-9BB7-0B3472ED71C3} = {1BF38CDF-BF7D-4FD6-B247-3F9850B3EA31}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {04638B90-59A9-4F3B-8610-5DA4E8072862}

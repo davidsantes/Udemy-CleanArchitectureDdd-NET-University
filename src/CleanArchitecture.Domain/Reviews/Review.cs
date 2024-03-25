@@ -6,6 +6,12 @@ namespace CleanArchitecture.Domain.Reviews;
 
 public sealed class Review : Entity
 {
+    /// <summary>
+    /// Constructor necesario para que EF funcione.
+    /// </summary>
+    private Review()
+    { }
+
     private Review(
         Guid id,
         Guid vehiculoId,

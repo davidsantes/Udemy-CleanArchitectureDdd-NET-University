@@ -62,15 +62,15 @@ internal sealed class SearchVehiculosQueryHandler
                     SELECT 1
                     FROM alquileres AS b
                     WHERE
-                        b.vehiculo_id = a.id
+                        b.vehiculo_id = a.id AND
                         b.duracion_inicio <= @EndDate AND
-                        b.duracion_final  >= @StartDate AND
+                        b.duracion_fin >= @StartDate AND
                         b.status = ANY(@ActiveAlquilerStatuses)
              )
         """;
 
         // Se ejecuta la consulta SQL y se espera el resultado asincrónico.
-        //Quiero que me devuelva un VehiculoResponse y un DireccionResponse, que está incluido en un VehiculoResponse
+        // Devuelve un VehiculoResponse y un DireccionResponse, que está incluido en un VehiculoResponse
         var vehiculos = await connection
             .QueryAsync<VehiculoResponse, DireccionResponse, VehiculoResponse>
             (

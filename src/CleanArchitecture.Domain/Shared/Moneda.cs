@@ -14,7 +14,7 @@ public record Moneda(decimal Monto, TipoMoneda TipoMoneda)
     /// <exception cref="InvalidOperationException"></exception>
     public static Moneda operator +(Moneda primero, Moneda segundo)
     {
-        if (primero.TipoMoneda != segundo.TipoMoneda)
+       if (primero.TipoMoneda != segundo.TipoMoneda)
         {
             throw new InvalidOperationException("El tipo de moneda debe ser el mismo");
         }

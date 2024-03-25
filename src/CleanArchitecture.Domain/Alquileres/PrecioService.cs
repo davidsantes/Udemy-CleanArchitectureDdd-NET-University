@@ -8,13 +8,13 @@ public class PrecioService
     public PrecioDetalle CalcularPrecio(Vehiculo vehiculo, DateRange periodo)
     {
         var tipoMoneda = vehiculo.Precio!.TipoMoneda;
-        var precioTotal = Moneda.Zero();
+        //var precioTotal = Moneda.Zero();
 
         //Cálculo del precio base
         var precioPorPeriodo = new Moneda(
             periodo.CantidadDias * vehiculo.Precio.Monto,
             tipoMoneda);
-        precioTotal += precioPorPeriodo;
+        var precioTotal = precioPorPeriodo;
 
         //Cálculo del precio por accesorios solicitados por el usuario
         decimal porcentageCharge = 0;

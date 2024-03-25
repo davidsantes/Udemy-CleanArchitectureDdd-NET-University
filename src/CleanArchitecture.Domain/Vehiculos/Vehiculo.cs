@@ -5,6 +5,12 @@ namespace CleanArchitecture.Domain.Vehiculos;
 
 public sealed class Vehiculo : Entity
 {
+    /// <summary>
+    /// Constructor necesario para que EF funcione.
+    /// </summary>
+    private Vehiculo()
+    { }
+
     public Vehiculo(
         Guid id,
         Modelo modelo,
@@ -25,11 +31,11 @@ public sealed class Vehiculo : Entity
         Direccion = direccion;
     }
 
-    public Modelo? Modelo {get;private set;}
-    public Vin? Vin {get;private set;}
-    public Direccion? Direccion {get; private set;}
-    public Moneda? Precio {get; private set;}
-    public Moneda? Mantenimiento {get; private set;}
-    public DateTime? FechaUltimaAlquiler {get; internal set;} //Accesible desde el mismo ensamblado. Por ejemplo, en alquileres.
-    public List<Accesorio> Accesorios {get; private set;} = new();
+    public Modelo? Modelo { get; private set; }
+    public Vin? Vin { get; private set; }
+    public Direccion? Direccion { get; private set; }
+    public Moneda? Precio { get; private set; }
+    public Moneda? Mantenimiento { get; private set; }
+    public DateTime? FechaUltimaAlquiler { get; internal set; } //Accesible desde el mismo ensamblado. Por ejemplo, en alquileres.
+    public List<Accesorio> Accesorios { get; private set; } = new();
 }

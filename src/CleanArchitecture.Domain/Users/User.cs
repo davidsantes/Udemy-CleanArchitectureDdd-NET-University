@@ -5,6 +5,12 @@ namespace CleanArchitecture.Domain.Users;
 
 public sealed class User : Entity
 {
+    /// <summary>
+    /// Constructor necesario para que EF funcione.
+    /// </summary>
+    private User()
+    { }
+
     private User(
         Guid id
         , Nombre nombre
