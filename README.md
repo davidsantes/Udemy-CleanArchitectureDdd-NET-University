@@ -7,7 +7,8 @@ Ejercicios tomados del curso de .Net University en Udemy: **Clean Architecture y
 # Índice completo de contenidos 📋
 1. **[Clean architecture en .NET](#Seccion_01_Clean)**
 2. **[Capa de Domain](#Seccion_02_Capa_Domain)**
-2. **[Capa de Application](#Seccion_03_Capa_Application)**
+3. **[Capa de Application](#Seccion_03_Capa_Application)**
+4. **[Capa de Infrastructure](#Seccion_04_Capa_Infrastructure)**
 
 ---
 
@@ -40,7 +41,6 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 
 # SECCIÓN 01. Clean architecture en .NET <a name="Seccion_01_Clean"></a>
 ![My Image](./docs/01.Domain.JPG)
-
 
 ---
 
@@ -86,6 +86,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 
 **Paquetes Nuget:**
 * Uso de `MediatR`: MediatR es una implementación del patrón mediador que ocurre completamente en el mismo proceso de la aplicación (in-process), y es una herramienta fundamental para crear sistemas basados en CQRS. Toda la comunicación entre el usuario y la capa de persistencia se gestiona a través de MediatR.
+* Uso de `Dapper`.
 
 **Carpeta `Abstractions`, que dentro contiene, entre otros:**
 * Carpeta `Behaviours` (Interceptores para *cross cutting concerns): en esta carpeta se encuentran los interceptores:
@@ -102,12 +103,39 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 			* Por ejemplo, para crear un usuario, se crearía la clase `UsuarioCommand`.
 		* `ICommandHandler`: Define una interfaz para los controladores de comandos.
 			* Por ejemplo, para manejar comandos relacionados con usuarios, se crearía una clase que implemente esta interfaz, como `UsuarioCommandHandler`.
-* Clase `DependencyInjection`, encargada de la inyección de dependencias, por ejemplo, de: 
-	* Registrará los servicios, como por ejemplo `PrecioService`.
-	* Registrará los datos necesarios de `MediatR`, como los Command, Queries y sus respectivos Handlers a través del patrón Mediator.
-* Carpeta `Exceptions`, que dentro contiene, entre otros:**
-	* Lorem ipsum.
-* Carpeta `Alquileres`, que dentro contiene la lógica de alquileres, entre otros:**
-	* Lógica para gestionas alquileres, con sus correspondientes Query, Command, etc.
-* Carpeta `Vehiculos`, que dentro contiene la lógica de vehículos, entre otros:**
-	* Lorem ipsum.
+
+**Carpeta `Exceptions`, que dentro contiene, entre otros:**
+* Clase `ValidationException`, que contiene una lista de errores de tipo `ValidationError`.
+
+**Carpeta `Alquileres`, que dentro contiene la lógica de alquileres, entre otros**:
+* Lógica para gestionar alquileres, con sus correspondientes Query, Command, etc.
+
+**Carpeta `Vehiculos`, que dentro contiene la lógica de vehículos, entre otros**:
+* Lógica para buscar vehículos, con sus correspondientes Query.
+
+**Clase `DependencyInjection.cs`, encargada de la inyección de dependencias, por ejemplo, de**:
+* Registrar los servicios, como por ejemplo `PrecioService`.
+* Registrar los datos necesarios de `MediatR`, como los Command, Queries y sus respectivos Handlers a través del patrón Mediator.
+
+---
+
+# SECCIÓN 04. Proyecto CleanArchitecture.Infrastructure <a name="Seccion_04_Capa_Infrastructure"></a>
+
+**Paquetes Nuget:**
+* Uso de `Entity Framework`: .
+* Uso de `xxx`.
+
+**Carpeta `Configurations`, que dentro contiene, los mapeos de las entidades a las tablas de base de datos.**
+
+**Carpeta `Clock`, que dentro contiene la implementación de la interfaz `IDateTimeProvider`. Esta implementación va a ser:
+* `internal`, ya que vamos a utilizar la interfaz, que sí será pública.
+* `sealed`, ya que va a estar sellada y no permititrá su herencia.
+
+**Carpeta `Email`, que dentro contiene la implementación de la interfaz `EmailService`. Esta implementación va a ser:
+* `internal`, ya que vamos a utilizar la interfaz, que sí será pública.
+* `sealed`, ya que va a estar sellada y no permititrá su herencia.
+* Se trata de una simulación de envío no implementado.
+
+**Clase `DependencyInjection.cs`, encargada de la inyección de dependencias, por ejemplo, de**:
+* Registrar los servicios, como por ejemplo `DateTimeProvider` y `EmailService`.
+* Registro de la base de datos.

@@ -9,11 +9,12 @@ public static class DependencyInjection
 {
     public static IServiceCollection AddApplication(this IServiceCollection services)
     {
+        //Registramos en MediatR:
+        //- Todos los objetos Query y sus respectivos QueryHandler.
+        //- Todos los objetos Command y sus respectivos CommandHandler.
+        //- Todos los los behaviours / inyectores. 
         services.AddMediatR(configuration =>
         {
-            //Inyectamos:
-            //- todos los objetos Query y sus respectivos QueryHandler.
-            //- todos los objetos Command y sus respectivos CommandHandler.
             configuration.RegisterServicesFromAssembly(typeof(DependencyInjection).Assembly);
             configuration.AddOpenBehavior(typeof(LoggingBehavior<,>));
             configuration.AddOpenBehavior(typeof(ValidationBehavior<,>));
