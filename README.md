@@ -46,6 +46,9 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 
 # SECCIÓN 02. Proyecto CleanArchitecture.Domain <a name="Seccion_02_Capa_Domain"></a>
 
+**Estructura de carpetas:**
+![My Image](./docs/03.CleanArchitecture.Domain.Folders.JPG)
+
 **CleanArchitecture.Domain.Abstractions:**
 * `public abstract class Entity`: para identificar entidades, y poner un `Guid` a las clases de tipo entidad. La propiedad tiene como setter `init`,  Init indica que una vez que ha sido inicializada la propiedad, no se puede cambiar su valor.
 * `public interface IDomainEvents : INotification`: para configurar eventos de dominio. La entidad base `Entity`, manejará estos eventos.
@@ -83,6 +86,9 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 ---
 
 # SECCIÓN 03. Proyecto CleanArchitecture.Application <a name="Seccion_03_Capa_Application"></a>
+
+**Estructura de carpetas:**
+![My Image](./docs/04.CleanArchitecture.Application.Folders.JPG)
 
 **Paquetes Nuget:**
 * Uso de `MediatR`: MediatR es una implementación del patrón mediador que ocurre completamente en el mismo proceso de la aplicación (in-process), y es una herramienta fundamental para crear sistemas basados en CQRS. Toda la comunicación entre el usuario y la capa de persistencia se gestiona a través de MediatR.
