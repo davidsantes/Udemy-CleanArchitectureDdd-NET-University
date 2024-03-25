@@ -2,14 +2,12 @@
 
 Ejercicios tomados del curso de .Net University en Udemy: **Clean Architecture y Domain Driven Design en ASP.NET Core 8**, y complementado con apuntes propios.
 
-
 ---
 
 # Índice completo de contenidos 📋
 1. **[Clean architecture en .NET](#Seccion_01_Clean)**
 2. **[Capa de Domain](#Seccion_02_Capa_Domain)**
 2. **[Capa de Application](#Seccion_03_Capa_Application)**
-
 
 ---
 
@@ -90,6 +88,9 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 * Uso de `MediatR`: MediatR es una implementación del patrón mediador que ocurre completamente en el mismo proceso de la aplicación (in-process), y es una herramienta fundamental para crear sistemas basados en CQRS. Toda la comunicación entre el usuario y la capa de persistencia se gestiona a través de MediatR.
 
 **Carpeta `Abstractions`, que dentro contiene, entre otros:**
+* Carpeta `Behaviours` (Interceptores para *cross cutting concerns): en esta carpeta se encuentran los interceptores:
+	* `LoggingBehavior`: interceptor que captura todos los request que envíe el cliente, al insertar un nuevo record de tipo Command que implementen IBaseCommand. Comportamiento para registrar información de log al ejecutar commands (IBaseCommand).
+	* `ValidationBehavior`: interceptor que captura las solicitudes de comando antes de ser manejadas por los controladores correspondientes para validar sus datos meciante Fluent Validation.
 * Carpeta `Messaging`: en esta carpeta se encuentran las interfaces relacionadas con el manejo de mensajes dentro de la aplicación.
 	* Interfaces para **Queries**: 
 		* `IQuery`: Define una interfaz para las consultas que devuelven un resultado.
