@@ -49,6 +49,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 ![My Image](./docs/imgs/01.Domain.JPG)
 
 **Estructura de carpetas:**
+
 ![My Image](./docs/imgs/03.CleanArchitecture.Domain.Folders.JPG)
 
 **CleanArchitecture.Domain.Abstractions:**
@@ -90,6 +91,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 # SECCIÓN 03. Proyecto CleanArchitecture.Application <a name="Seccion_03_Capa_Application"></a>
 
 **Estructura de carpetas:**
+
 ![My Image](./docs/imgs/04.CleanArchitecture.Application.Folders.JPG)
 
 **Paquetes Nuget:**
@@ -131,6 +133,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 # SECCIÓN 04. Proyecto CleanArchitecture.Infrastructure <a name="Seccion_04_Capa_Infrastructure"></a>
 
 **Estructura de carpetas:**
+
 ![My Image](./docs/imgs/05.CleanArchitecture.Infrastructure.Folders.JPG)
 
 **Paquetes Nuget:**
@@ -166,6 +169,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 # SECCIÓN 05. Proyecto CleanArchitecture.Api <a name="Seccion_05_Capa_Presentacion_WebApi"></a>
 
 **Estructura de carpetas:**
+
 ![My Image](./docs/imgs/06.CleanArchitecture.Api.Folders.JPG)
 
 ## Preparación de la migración para base de datos
