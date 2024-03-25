@@ -127,11 +127,17 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 
 # SECCIÓN 04. Proyecto CleanArchitecture.Infrastructure <a name="Seccion_04_Capa_Infrastructure"></a>
 
+**Estructura de carpetas:**
+![My Image](./docs/05.CleanArchitecture.Infrastructure.Folders.JPG)
+
 **Paquetes Nuget:**
-* Uso de `Entity Framework`: .
-* Uso de `xxx`.
+* Uso de `EFCore.NamingConventions`, `Microsoft.EntityFrameworkCore`, `Microsoft.EntityFrameworkCore.Tools`, `Npgsql.EntityFrameworkCore.PostgreSQL`.
 
 **Carpeta `Configurations`, que dentro contiene, los mapeos de las entidades a las tablas de base de datos.**
+
+**Carpeta `Data`, con las configuraciones necesarias para Dapper:**
+* `SqlConnectionFactory`, factoría de conexión que se utilizará para Dapper (consultas). Implementa la interfaz `ISqlConnectionFactory`.
+* `DateOnlyTypeHandler`, clase para manejar la conversión entre el tipo de datos .NET DateOnly y el tipo de datos de la base de datos.
 
 **Carpeta `Clock`, que dentro contiene la implementación de la interfaz `IDateTimeProvider`. Esta implementación va a ser:
 * `internal`, ya que vamos a utilizar la interfaz, que sí será pública.
@@ -141,6 +147,8 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 * `internal`, ya que vamos a utilizar la interfaz, que sí será pública.
 * `sealed`, ya que va a estar sellada y no permititrá su herencia.
 * Se trata de una simulación de envío no implementado.
+
+**Carpeta `Repositories`, que dentro contiene la implementación de las interfaces de dominio `IAlquilerRepository`, `IUserRepository`, etc.
 
 **Clase `DependencyInjection.cs`, encargada de la inyección de dependencias, por ejemplo, de**:
 * Registrar los servicios, como por ejemplo `DateTimeProvider` y `EmailService`.

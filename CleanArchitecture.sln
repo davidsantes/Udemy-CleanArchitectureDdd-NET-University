@@ -11,6 +11,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "docs", "docs", "{1BF38CDF-B
 		docs\02.Bdd.JPG = docs\02.Bdd.JPG
 		docs\03.CleanArchitecture.Domain.Folders.JPG = docs\03.CleanArchitecture.Domain.Folders.JPG
 		docs\04.CleanArchitecture.Application.Folders.JPG = docs\04.CleanArchitecture.Application.Folders.JPG
+		docs\05.CleanArchitecture.Infrastructure.Folders.JPG = docs\05.CleanArchitecture.Infrastructure.Folders.JPG
 	EndProjectSection
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{1E9AA2E5-7F15-4778-B0DB-8A9B1176903C}"
