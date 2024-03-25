@@ -115,6 +115,7 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 
 **Carpeta `Alquileres`, que dentro contiene la lógica de alquileres, entre otros**:
 * Lógica para gestionar alquileres, con sus correspondientes Query, Command, etc.
+* Esta lógica tiene encuentra errores de concurrencia `ConcurrencyException`.
 
 **Carpeta `Vehiculos`, que dentro contiene la lógica de vehículos, entre otros**:
 * Lógica para buscar vehículos, con sus correspondientes Query.
@@ -149,6 +150,11 @@ Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 * Se trata de una simulación de envío no implementado.
 
 **Carpeta `Repositories`, que dentro contiene la implementación de las interfaces de dominio `IAlquilerRepository`, `IUserRepository`, etc.
+
+**Clase `ApplicationDbContext.cs`, Clase que representa el contexto de la base de datos de la aplicación, se encarga de**:
+* Configurar el modelo de la base de datos.
+* Guardar los cambios en la base de datos y publicar los eventos de dominio asociados mediante el publisher de `MediatR`.
+* Controlar los *errores por concurrencia optimista*. Para más info, revisar `ReservarAlquilerCommandHandler.cs` y `VehiculoConfiguration.cs` (añade una columna de versión en cada fila para registros optimistas).
 
 **Clase `DependencyInjection.cs`, encargada de la inyección de dependencias, por ejemplo, de**:
 * Registrar los servicios, como por ejemplo `DateTimeProvider` y `EmailService`.
