@@ -14,7 +14,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Application", "src\CleanArchitecture.Application\CleanArchitecture.Application.csproj", "{5727EBF7-3ECF-4727-89A8-7B3D3A548890}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CleanArchitecture.Infrastructure", "src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{18EE6537-08C5-4F29-A642-35F6FA8AA103}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Infrastructure", "src\CleanArchitecture.Infrastructure\CleanArchitecture.Infrastructure.csproj", "{18EE6537-08C5-4F29-A642-35F6FA8AA103}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CleanArchitecture.Api", "src\CleanArchitecture.Api\CleanArchitecture.Api.csproj", "{D93C1563-D870-4CC0-A3CE-2562B750443A}"
 EndProject
@@ -34,6 +34,12 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "imgs", "imgs", "{C4FA67FC-3
 		docs\imgs\05.CleanArchitecture.Infrastructure.Folders.JPG = docs\imgs\05.CleanArchitecture.Infrastructure.Folders.JPG
 		docs\imgs\06.CleanArchitecture.Api.Folders.JPG = docs\imgs\06.CleanArchitecture.Api.Folders.JPG
 		docs\imgs\07.CleanArchitecture.Migrations.Folder.JPG = docs\imgs\07.CleanArchitecture.Migrations.Folder.JPG
+		docs\imgs\08.Bdd_Tablas1.JPG = docs\imgs\08.Bdd_Tablas1.JPG
+		docs\imgs\08.Bdd_Tablas2.JPG = docs\imgs\08.Bdd_Tablas2.JPG
+		docs\imgs\08.Bdd_Tablas3.JPG = docs\imgs\08.Bdd_Tablas3.JPG
+		docs\imgs\08.Bdd_Tablas4.JPG = docs\imgs\08.Bdd_Tablas4.JPG
+		docs\imgs\08.Bdd_Tablas5.JPG = docs\imgs\08.Bdd_Tablas5.JPG
+		docs\imgs\08.Bdd_Tablas6.JPG = docs\imgs\08.Bdd_Tablas6.JPG
 	EndProjectSection
 EndProject
 Global

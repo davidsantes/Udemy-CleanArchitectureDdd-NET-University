@@ -16,9 +16,25 @@ Ejercicios tomados del curso de .Net University en Udemy: **Clean Architecture y
 # Toma de contacto  🚀 <a name="Toma_Contacto"></a>
 
 ## Principales puntos 📋
-* Por completar.
-* Uso de Central Package Management (CPM) para paquetes Nuget
-https://learn.microsoft.com/en-us/nuget/consume-packages/central-package-management
+* Creación de un back-end para el alquiler de coches mediante un enfoque de dominio - DDD.
+* Estructura de una aplicación basada en Clean Architecture.
+* Capa de Domain: organización de la lógica de negocio.
+  - Uso de Entity Framework Core para modelar las entidades del dominio.
+  - Implementación de eventos de dominio y notificaciones mediante eventos.
+  - Creación de servicios de dominio y contratos de acceso a base de datos (repositorios) y persistencia (unit of work).
+  - Manejo de objetos de resultados y errores.
+* Capa de Application: gestión de casos de uso y lógica de aplicación.
+  - Utilización de MediatR para implementar el patrón Mediator y CQRS.
+  - Manejo de comandos y consultas.
+  - Uso de Dapper para consultas específicas.
+* Capa de Infrastructure: implementación de detalles técnicos y externos.
+  - Configuración de Entity Framework Core.
+  - Implementación de repositorios y acceso a base de datos.
+  - Configuración de servicios externos como servicios de correo electrónico.
+* Preparación y ejecución de migraciones de base de datos.
+* Manejo de excepciones y retorno de errores estandarizados.
+* Uso de controladores en una API RESTful.
+* Ejecución de la API a través de herramientas como Postman.
 
 ## Pre-requisitos 📋
 Como herramientas de desarrollo necesitarás:
