@@ -201,11 +201,12 @@ dotnet ef --verbose migrations add MigracionInicial -p src/CleanArchitecture.Inf
 Si todo ha ido correctamente, habrá creado una migración como:
 ![My Image](./docs/imgs/07.CleanArchitecture.Migrations.Folder.JPG)
 
-6. Una vez creadas las migraciones, la clase `program.cs` del proyecto `CleanArchitecture.Api` llamará a:
+5. Una vez creadas las migraciones, la clase `program.cs` del proyecto `CleanArchitecture.Api` llamará a:
 	- `ApplicationBuilderExtensions.ApplyMigration` para ejecutar las migraciones.
 	- `SeedDataExtensions.SeedData` para generar datos por defecto. Utiliza la librería `Bogus` para introducir datos fake.
 
-7. Ejecutar el proyecto `CleanArchitecture.Api`, y se creará tanto la base de datos como datos en las tablas.
+6. Ejecutar el proyecto `CleanArchitecture.Api`, y se creará tanto la base de datos como datos en las tablas:
+![My Image](./docs/imgs/08.Bdd_Tablas1.JPG)
 
 ## Captura de excepciones
 La aplicación utiliza el Middleware `ExceptionHandlingMiddleware` para capturar las excepciones y mostrarlas de una forma entendible para el cliente.
