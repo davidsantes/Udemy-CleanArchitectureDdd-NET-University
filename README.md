@@ -31,6 +31,19 @@ Como herramientas de desarrollo necesitarás:
 Los ejemplos se realizan sobre una base de datos de alquileres de coches.
 ![My Image](./docs/imgs/02.Bdd.JPG)
 
+| Alquileres | Reviews | Users | Vehículos |
+|------------|------------|------------|------------|
+| ![Imagen 1](./docs/imgs/08.Bdd_Tablas3.JPG)   | ![Imagen 1](./docs/imgs/08.Bdd_Tablas4.JPG)   | ![Imagen 1](./docs/imgs/08.Bdd_Tablas5.JPG)   | ![Imagen 1](./docs/imgs/08.Bdd_Tablas6.JPG)   |
+
+
+Además, al ser Code First, existirá una tabla con las migraciones:
+
+| Migración |
+|------------|
+| ![Imagen 1](./docs/imgs/08.Bdd_Tablas2.JPG)   |
+
+
+
 ## Agradecimientos 🎁
 
 * Plataforma de aprendizaje online [Udemy](https://www.udemy.com/share/109PRS3@gz4ZDXhSu8i9pa_CnjiahHDgwCptf9vw-CYR0FqedgI2UGsgwy4nmPTe3ehw5QaGMA==/)
