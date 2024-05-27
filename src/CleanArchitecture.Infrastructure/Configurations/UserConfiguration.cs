@@ -14,6 +14,8 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
         // Configuración de la tabla y clave primaria
         builder.ToTable("users");
         builder.HasKey(user => user.Id);
+        builder.Property(user => user.Id)
+            .HasConversion(userId => userId!.Value, value => new UserId(value));
 
         // Configuración de mapeo para la propiedad Nombre
         builder.Property(user => user.Nombre)

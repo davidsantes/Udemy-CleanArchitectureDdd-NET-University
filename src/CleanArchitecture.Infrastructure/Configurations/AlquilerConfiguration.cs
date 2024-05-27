@@ -18,6 +18,9 @@ internal sealed class AlquilerConfiguration : IEntityTypeConfiguration<Alquiler>
         builder.ToTable("alquileres");
         builder.HasKey(alquiler => alquiler.Id);
 
+        builder.Property(alquiler => alquiler.Id)
+            .HasConversion(alquilerId => alquilerId!.Value, value => new AlquilerId(value));
+
         // Configuración de mapeo para la propiedad PrecioPorPeriodo (1-1)
         builder.OwnsOne(alquiler => alquiler.PrecioPorPeriodo, precioBuilder =>
         {

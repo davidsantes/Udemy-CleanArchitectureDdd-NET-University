@@ -60,7 +60,7 @@ public sealed class ApplicationDbContext : DbContext, IUnitOfWork
     {
         // Obtiene todas las entidades que tienen eventos de dominio pendientes
         var domainEvents = ChangeTracker
-            .Entries<Entity>() // Obtiene las entradas de todas las entidades que están siendo rastreadas por el contexto
+            .Entries<IEntity>() // Obtiene las entradas de todas las entidades que están siendo rastreadas por el contexto
             .Select(entry => entry.Entity) // Selecciona las entidades de las entradas
             .SelectMany(entity =>
             {

@@ -3,7 +3,7 @@ using CleanArchitecture.Domain.Shared;
 
 namespace CleanArchitecture.Domain.Vehiculos;
 
-public sealed class Vehiculo : Entity
+public sealed class Vehiculo : Entity<VehiculoId>
 {
     /// <summary>
     /// Constructor necesario para que EF funcione.
@@ -12,7 +12,7 @@ public sealed class Vehiculo : Entity
     { }
 
     public Vehiculo(
-        Guid id,
+        VehiculoId id,
         Modelo modelo,
         Vin vin,
         Moneda precio,

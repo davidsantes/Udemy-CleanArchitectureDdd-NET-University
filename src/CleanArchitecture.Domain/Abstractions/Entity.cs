@@ -1,6 +1,6 @@
 namespace CleanArchitecture.Domain.Abstractions;
 
-public abstract class Entity
+public abstract class Entity<TEntityId> : IEntity
 {
     private readonly List<IDomainEvent> _domainEvents = new();
 
@@ -11,7 +11,7 @@ public abstract class Entity
     {
     }
 
-    protected Entity(Guid id)
+    protected Entity(TEntityId id)
     {
         Id = id;
     }
@@ -19,7 +19,7 @@ public abstract class Entity
     /// <summary>
     /// Identificador de la entidad. Init indica que una vez que ha sido inicializada la propiedad, no se puede cambiar su valor.
     /// </summary>
-    public Guid Id { get; init; }
+    public TEntityId? Id { get; init; }
 
     public IReadOnlyList<IDomainEvent> GetDomainEvents()
     {

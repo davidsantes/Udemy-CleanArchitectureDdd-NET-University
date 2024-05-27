@@ -18,14 +18,17 @@ internal sealed class ReviewConfiguration : IEntityTypeConfiguration<Review>
         builder.ToTable("reviews");
         builder.HasKey(review => review.Id);
 
+        builder.Property(review => review.Id)
+            .HasConversion(reviewId => reviewId!.Value, value => new ReviewId(value));
+
         // Configuración de mapeo para la propiedad Rating
         builder.Property(review => review.Rating)
-            .HasConversion(rating => rating.Value, value => Rating.Create(value).Value);
+            .HasConversion(rating => rating!.Value, value => Rating.Create(value).Value);
 
         // Configuración de mapeo para la propiedad Comentario
         builder.Property(review => review.Comentario)
             .HasMaxLength(200)
-            .HasConversion(comentario => comentario.Value, value => new Comentario(value));
+            .HasConversion(comentario => comentario!.Value, value => new Comentario(value));
 
         // Configuración de la relación con la entidad Vehiculo (N-1)
         builder.HasOne<Vehiculo>()

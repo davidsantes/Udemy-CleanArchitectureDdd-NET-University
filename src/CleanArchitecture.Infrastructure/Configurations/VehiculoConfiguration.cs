@@ -15,6 +15,8 @@ internal sealed class VehiculoConfiguration : IEntityTypeConfiguration<Vehiculo>
         // Configuración de la tabla y clave primaria
         builder.ToTable("vehiculos");
         builder.HasKey(vehiculo => vehiculo.Id);
+        builder.Property(vehiculo => vehiculo.Id)
+            .HasConversion(vehiculoId => vehiculoId!.Value, value => new VehiculoId(value));
 
         // Configuración de mapeo para la propiedad Direccion (1-1)
         builder.OwnsOne(vehiculo => vehiculo.Direccion);

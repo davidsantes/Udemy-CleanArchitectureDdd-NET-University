@@ -4,7 +4,7 @@ namespace CleanArchitecture.Domain.Alquileres;
 
 public interface IAlquilerRepository
 {
-    Task<Alquiler?> GetByIdAsync(Guid id, CancellationToken cancellationToken = default);
+    Task<Alquiler?> GetByIdAsync(AlquilerId id, CancellationToken cancellationToken = default);
 
     /// <summary>
     /// Garantiza que el vehículo no haya sido registrado en las fechas señaladas
