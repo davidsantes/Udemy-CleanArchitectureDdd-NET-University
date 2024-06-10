@@ -32,6 +32,10 @@ internal sealed class UserConfiguration : IEntityTypeConfiguration<User>
             .HasMaxLength(400)
             .HasConversion(email => email!.Value, value => new Email(value));
 
+        builder.Property(user => user.PasswordHash)
+            .HasMaxLength(2000) //Al no saber la longitud de encriptación, puede ser una cadena grande de caracteres.
+            .HasConversion(password => password!.Value, value => new PasswordHash(value));
+
         // Configuración de índice único para la propiedad Email
         builder.HasIndex(user => user.Email).IsUnique();
     }
