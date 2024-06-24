@@ -11,8 +11,7 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddControllers();
 
 //Configuración de la autenticación
-builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
-    .AddJwtBearer();
+builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme).AddJwtBearer();
 builder.Services.ConfigureOptions<JwtOptionsSetup>();
 builder.Services.ConfigureOptions<JwtBearerOptionsSetup>();
 builder.Services.AddTransient<IJwtProvider, JwtProvider>();
@@ -36,8 +35,10 @@ if (app.Environment.IsDevelopment())
 
 //Aplica las migraciones, comentar si no se quiere ejecutar:
 app.ApplyMigration();
+
 //Inserta datos ficticios, comentar si no se quiere ejecutar:
-app.SeedData();
+//app.SeedData();
+//app.SeedDataAuthentication();
 
 app.UseCustomExceptionHandler();
 

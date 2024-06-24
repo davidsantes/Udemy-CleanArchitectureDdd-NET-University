@@ -7,4 +7,6 @@ public interface IUserRepository
     void Add(User user);
 
     Task<User?> GetByEmailAsync(Email email, CancellationToken cancellationToken = default);
+
+    Task<bool> IsUserExists(Email email, CancellationToken cancellationToken = default);
 }

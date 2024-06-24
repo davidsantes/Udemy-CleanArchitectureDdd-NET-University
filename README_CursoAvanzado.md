@@ -99,3 +99,21 @@ A continuación se describen las clases que intervienen:
 - Clase `JwtBearerOptionsSetup`, configura las opciones de autenticación JWT para la aplicación.
 - Clase `UsersController`, necesario para conseguir un JWT. Debe ser `[AllowAnonymous]`.
 - Clase `VehiculosController`, configura un método que solo se puede acceder si se tiene un Jwt válido. Debe ser `[Authorize]`.
+
+## Seguridad y migración de EF en Clean architecture
+
+- Clase `UsersController`: se ha creado el método `Register` de usuarios, que espera:
+`
+{
+  "email": "string",
+  "nombre": "string",
+  "apellidos": "string",
+  "password": "string"
+}
+`
+
+A su vez, usa las clases:
+- `RegisterUserCommand.cs`
+- `RegisterUserCommandHandler.cs`
+- `RegisterUserCommandValidator.cs`
+- `RegisterUserRequest.cs`
