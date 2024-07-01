@@ -6,10 +6,10 @@ Para poder realizarlo, es necesario tener claro el curso anterior: **Clean Archi
 ---
 
 # Índice completo de contenidos 📋
-1. **[Strong Ids](#Seccion_01_StrongIds)**
-2. **[Modelos de authentication en clean architecture](#Seccion_02_Authentication)**
-3. **[Seguridad y migración de EF en Clean Architecture](#Seccion_03_Migracion)**
-
+1. **[SECCIÓN 02. Domain Driven Design con Identificadores avanzados (strong ids)](#Seccion_02_StrongIds)**
+2. **[SECCIÓN 03. Modelos de authentication en clean architecture](#Seccion_03_Authentication)**
+3. **[SECCIÓN 04. Seguridad y migración de EF en Clean architecture](#Seccion_04_Migracion)**
+4. **[SECCIÓN 06. Authorization con permisos y roles en Clean Architecture](#Seccion_06_Authorization)**
 
 ---
 
@@ -21,7 +21,7 @@ Para poder realizarlo, es necesario tener claro el curso anterior: **Clean Archi
 
 ---
 
-# SECCIÓN 01. Clean architecture en .NET <a name="Seccion_01_StrongIds"></a>
+# SECCIÓN 02. Domain Driven Design con Identificadores avanzados (strong ids) <a name="Seccion_02_StrongIds"></a>
 
 **¿Qué son los strong ids?:**
 * En el contexto del Domain-Driven Design (DDD), los Strong IDs (identificadores fuertes) son una técnica para gestionar identificadores de entidades de manera segura y expresiva.
@@ -32,7 +32,7 @@ Para poder realizarlo, es necesario tener claro el curso anterior: **Clean Archi
 
 ---
 
-# SECCIÓN 02. Modelos de authentication en clean architecture <a name="Seccion_02_Authentication"></a>
+# SECCIÓN 03. Modelos de authentication en clean architecture <a name="Seccion_03_Authentication"></a>
 
 APis de autenticación externas para sistemas distribuidos: Okta, Azure (Microsoft Entra ID), KeyCloak, etcétera.
 ![My Image](./docs/imgs/09.Authentication.JPG)
@@ -102,7 +102,7 @@ A continuación se describen las clases que intervienen:
 - Clase `UsersController`, necesario para conseguir un JWT. Debe ser `[AllowAnonymous]`.
 - Clase `VehiculosController`, configura un método que solo se puede acceder si se tiene un Jwt válido. Debe ser `[Authorize]`.
 
-# SECCIÓN 03. Seguridad y migración de EF en Clean architecture <a name="Seccion_03_Migracion"></a>
+# SECCIÓN 04. Seguridad y migración de EF en Clean architecture <a name="Seccion_04_Migracion"></a>
 
 - Clase `UsersController`: se ha creado el método `Register` de usuarios, que espera:
 `
@@ -119,3 +119,20 @@ A su vez, usa las clases:
 - `RegisterUserCommandHandler.cs`
 - `RegisterUserCommandValidator.cs`
 - `RegisterUserRequest.cs`
+
+# SECCIÓN 06. Authorization con permisos y roles en Clean Architecture <a name="Seccion_06_Authorization"></a>
+
+4. **[Authorization con permisos y roles en Clean Architecture](#Seccion_03_Authorization)**
+
+- Un buen sistema para el proceso de autorización del producto es el siguiente:
+	- **Usuarios:** varios usuarios (en la carga inicial habrá al menos 2)
+	- **Roles:**
+		- Cliente: permiso de lectura.
+		- Admin: todos los permisos.
+	- **Permisos:** lectura, escritura, modificación.
+	- Existirán tablas intermedias entre usuarios y roles y entre roles y permisos.
+
+![My Image](./docs/imgs/10.Authorization1.JPG)
+
+## Clases abstractas y genéricas para authorization
+Lorem ipsum.
