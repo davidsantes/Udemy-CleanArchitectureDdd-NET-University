@@ -8,7 +8,9 @@ Para poder realizarlo, es necesario tener claro el curso anterior: **Clean Archi
 # Índice completo de contenidos 📋
 1. **[Strong Ids](#Seccion_01_StrongIds)**
 2. **[Modelos de authentication en clean architecture](#Seccion_02_Authentication)**
- 
+3. **[Seguridad y migración de EF en Clean Architecture](#Seccion_03_Migracion)**
+
+
 ---
 
 
@@ -100,7 +102,7 @@ A continuación se describen las clases que intervienen:
 - Clase `UsersController`, necesario para conseguir un JWT. Debe ser `[AllowAnonymous]`.
 - Clase `VehiculosController`, configura un método que solo se puede acceder si se tiene un Jwt válido. Debe ser `[Authorize]`.
 
-## Seguridad y migración de EF en Clean architecture
+# SECCIÓN 03. Seguridad y migración de EF en Clean architecture <a name="Seccion_03_Migracion"></a>
 
 - Clase `UsersController`: se ha creado el método `Register` de usuarios, que espera:
 `
